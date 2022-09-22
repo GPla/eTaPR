@@ -325,7 +325,7 @@ def draw_graph(anomalies: list, predictions: list, graph_dst: str) -> None:
         Time_Plot.draw_graphs(anomalies, predictions, graph_dst)
 
 
-if __name__ == '__main__':
+def main():
     argument_parser = argparse.ArgumentParser()
     argument_parser.add_argument("--anomalies", help="anomaly file name (ground truth)", required=True)
     argument_parser.add_argument("--predictions", help="prediction file name", required=True)
@@ -359,3 +359,5 @@ if __name__ == '__main__':
     print_results(results, arguments.verbose)
     draw_graph(anomalies, predictions, graph)
 
+if __name__ == '__main__':
+    main()
