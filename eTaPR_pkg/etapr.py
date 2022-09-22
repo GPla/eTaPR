@@ -9,7 +9,7 @@ class eTaPR(tapr.TaPR):
     def __init__(self, theta_p, theta_r, delta=0.0):
         super(eTaPR, self).__init__(0.0, 0)
         self._predictions_weight = []
-        self._predictions_total_weight = 0.0
+        self._predictions_total_weight = 1e-7
         self._prune_predictions = []
 
         self._theta_p = theta_p
@@ -102,7 +102,7 @@ class eTaPR(tapr.TaPR):
 
     def _etar_p(self) -> np.array:
         if self.get_n_anomalies() == 0.0 or self.get_n_predictions() == 0.0:
-            return 0.0
+            return np.array([0.0])
 
         scores = self._overlap_score_mat_elm.sum(axis=1) / self._max_anomaly_score
         scores = np.where(scores > 1.0, 1.0, scores)
@@ -141,7 +141,7 @@ class eTaPR(tapr.TaPR):
 
     def _etap_p(self) -> np.array:
         if self.get_n_anomalies() == 0.0 or self.get_n_predictions() == 0.0:
-            return 0.0
+            return np.array([])
 
         scores = self._overlap_score_mat_elm.sum(axis=0) / self._max_prediction_score
         return scores
