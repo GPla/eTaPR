@@ -11,7 +11,7 @@ with open(os.path.join(HERE, 'requirements.txt')) as f:
 setup(
     name='eTaPR_pkg',
     description='',
-    version='0.0.0',
+    version='22.6.1',
     author='Won-Seok Hwang',
     author_email='hws0223@gmail.com',
     packages=['eTaPR_pkg'],
