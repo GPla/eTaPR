@@ -1,7 +1,7 @@
-from eTaPR_pkg.DataManage import Range
 import time
 import datetime
 import pandas as pd
+from . import Range
 
 def load_stream_2_range(stream_data: list, normal_label: int, anomaly_label: int, is_range_name: bool) -> list:
     return_list = []

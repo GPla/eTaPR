@@ -5,6 +5,7 @@
 - Create a `setup.py` and `requirements.txt` to make it installable directly from the github repo
 - Remove `__pycache__` artifacts
 - Updated CLI to `etapr`
+- Fixed import from absolute to relative
 
 Install directly from GitHub via `pip install git+https://github.com/GPla/eTaPR`
 

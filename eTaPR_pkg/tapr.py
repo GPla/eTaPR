@@ -2,7 +2,7 @@ import argparse
 from typing import Callable
 import math
 import copy
-from eTaPR_pkg.DataManage import File_IO, Range as rng, Time_Plot
+from .DataManage import File_IO, Range as rng, Time_Plot
 
 
 class TaPR:

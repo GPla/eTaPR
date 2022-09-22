@@ -1,9 +1,19 @@
-from eTaPR_pkg import tapr
 import math
 import argparse
-from eTaPR_pkg.DataManage import File_IO, Time_Plot
 import numpy as np
-from eTaPR_pkg.DataManage import Range as rng
+from . import tapr
+from .DataManage import File_IO, Time_Plot
+from .DataManage import Range as rng
+
+__all__ = [
+    'eTaPR',
+    'evaluate_w_ranges',
+    'evaluate_w_streams',
+    'evaluate_w_files',
+    'print_results',
+    'draw_graph'
+
+]
 
 class eTaPR(tapr.TaPR):
     def __init__(self, theta_p, theta_r, delta=0.0):
