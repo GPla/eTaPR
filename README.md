@@ -1,4 +1,12 @@
 
+## Changes
+
+- Fixes some issue for edges cases where no valid predictions or anomalies are present
+- Create a `setup.py` and `requirements.txt` to make it installable directly from the github repo
+- Remove `__pycache__` artifacts
+
+Install directly from GitHub via `pip install git+https://github.com/GPla/eTaPR`
+
 # Enhanced Time-series Aware Precision and Recall
 
 An anomaly coincides with a 'time range' in time-series data because an anomalous event (e.g., cyber attack, failure, or fraud) affects a system in a period. 
