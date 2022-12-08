@@ -270,8 +270,8 @@ def evaluate_w_ranges(anomalies: list, predictions: list, theta_p: float, theta_
     result['precision'] = ev.precision()
     result['recall'] = ev.recall()
 
-    result['point_adjust_precision'] = ev.point_adjust_precision(0.0)
-    result['point_adjust_recall'] = ev.point_adjust_recall(0.0)
+    result['point_adjust_precision'] = ev.point_adjust_precision(1e-8)
+    result['point_adjust_recall'] = ev.point_adjust_recall(1e-8)
 
     return result
 
