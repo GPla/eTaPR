@@ -272,6 +272,8 @@ def evaluate_w_ranges(anomalies: list, predictions: list, theta_p: float, theta_
 
     result['point_adjust_precision'] = ev.point_adjust_precision(1e-8)
     result['point_adjust_recall'] = ev.point_adjust_recall(1e-8)
+    
+    results['segments'] = len(detected_anomalies)/ len(anomalies)
 
     return result
 
