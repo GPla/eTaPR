@@ -256,7 +256,7 @@ def evaluate_w_ranges(anomalies: list, predictions: list, theta_p: float, theta_
     if tar_value + tap_value == 0:
         result['f1'] = 0.0
     else:
-        result['f1'] = (2 * tar_value * tap_value) / (tar_value + tap_value)
+        result['f1'] = (2 * tar_value * tap_value) / (tar_value + tap_value + 1e-10)
 
     false_alarm = 0
     false_alarm_cnt = 0
@@ -274,7 +274,7 @@ def evaluate_w_ranges(anomalies: list, predictions: list, theta_p: float, theta_
     result['point_adjust_recall'] = ev.point_adjust_recall(1e-8)
     result['point_adjust_f1'] = (
         (2 * result['point_adjust_precision'] * result['point_adjust_recall']) 
-         / (result['point_adjust_precision'] + result['point_adjust_recall']))
+         / (result['point_adjust_precision'] + result['point_adjust_recall']) + 1e-10)
     
     result['segments'] = len(detected_anomalies)/ len(anomalies)
     result['n_anomalies'] = len(anomalies)
