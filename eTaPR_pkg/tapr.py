@@ -2,7 +2,7 @@ import argparse
 from typing import Callable
 import math
 import copy
-from .DataManage import File_IO, Range as rng, Time_Plot
+from .DataManage import File_IO, Range as rng
 
 
 class TaPR:
@@ -287,8 +287,6 @@ def print_result(anomalies: list, predictions: list, alpha: float, theta: float,
 
 
     assert(graph == 'screen' or graph == 'file' or graph == 'none' or graph == 'all')
-    if graph == 'screen' or graph == 'file' or graph == 'all':
-        Time_Plot.draw_graphs(anomalies, org_predictions, graph)
 
 
 if __name__ == '__main__':

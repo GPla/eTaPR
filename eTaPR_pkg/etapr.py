@@ -2,7 +2,7 @@ import math
 import argparse
 import numpy as np
 from . import tapr
-from .DataManage import File_IO, Time_Plot
+from .DataManage import File_IO
 from .DataManage import Range as rng
 
 __all__ = [
@@ -11,8 +11,6 @@ __all__ = [
     'evaluate_w_streams',
     'evaluate_w_files',
     'print_results',
-    'draw_graph'
-
 ]
 
 class eTaPR(tapr.TaPR):
@@ -335,12 +333,6 @@ def print_results(result: dict, verbose: bool) -> None:
         print(buf[:-2])
 
 
-def draw_graph(anomalies: list, predictions: list, graph_dst: str) -> None:
-    assert (graph_dst == 'screen' or graph_dst == 'file' or graph_dst == 'none' or graph_dst == 'all')
-    if graph_dst == 'screen' or graph_dst == 'file' or graph_dst == 'all':
-        Time_Plot.draw_graphs(anomalies, predictions, graph_dst)
-
-
 def main():
     argument_parser = argparse.ArgumentParser()
     argument_parser.add_argument("--anomalies", help="anomaly file name (ground truth)", required=True)
@@ -373,7 +365,6 @@ def main():
     results = evaluate_w_ranges(anomalies, predictions, theta_p, theta_r, delta)
 
     print_results(results, arguments.verbose)
-    draw_graph(anomalies, predictions, graph)
 
 if __name__ == '__main__':
     main()
